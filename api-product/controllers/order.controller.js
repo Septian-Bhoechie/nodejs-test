@@ -29,8 +29,8 @@ exports.submit = function (req, res) {
 								if (product && product._id) {
 										let orderDetail = new OrderDetail(
 												{
-														order_id: order._id,
-														product_id: product._id,
+														order: order._id,
+														product: product._id,
 														price: product.price,
 														qty: req.body.qtys[product._id];
 														total: parseInt(req.body.qtys[product._id]) * product.price;
@@ -54,8 +54,8 @@ exports.submit = function (req, res) {
 							}
 
 							Order
-								.findById(order._id).
-								.populate('details'). // only works if we pushed refs to children
+								.findById(order._id)
+								.populate('details') // only works if we pushed refs to children
 								.exec(function (err4, orderResult) {
 									if (err4) {
 										return next(err3);

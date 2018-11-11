@@ -55,7 +55,7 @@ exports.submit = function (req, res) {
 
 							Order
 								.findById(order._id)
-								.populate('details') // only works if we pushed refs to children
+								.populate('details')
 								.exec(function (err4, orderResult) {
 									if (err4) {
 										return next(err3);

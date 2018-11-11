@@ -1,0 +1,16 @@
+{
+  "name": "api-product",
+  "version": "1.0.0",
+  "description": "Api Product for testing used",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "Septian Riza Saputra",
+  "license": "ISC",
+  "dependencies" : {
+    "body-parser": "~1.15.1",
+    "express": "~4.13.4",
+    "mongoose": "^5.0.0",
+  }
+}
